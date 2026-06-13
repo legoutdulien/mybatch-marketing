@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notre histoire — my batch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mybatch_styles.css">
+<style>
+.hist-hero{padding:80px 0 60px;background:linear-gradient(180deg,var(--green-pale) 0%,var(--bg) 100%);position:relative;overflow:hidden}
+.hist-hero::before{content:"";position:absolute;top:-150px;right:-100px;width:400px;height:400px;background:var(--orange-pale);border-radius:50%;opacity:.6;z-index:0}
+.hist-hero .wrap{position:relative;z-index:1}
+.hist-hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
+.hist-hero h1{font-weight:800;font-size:70px;line-height:1.02;letter-spacing:-.03em;color:var(--ink);margin-bottom:22px}
+.hist-hero h1 .accent{color:var(--orange)}
+.hist-hero .lead{font-size:20px;color:var(--tx-2);line-height:1.55;max-width:540px}
+.hist-hero .lead em{font-style:italic;color:var(--green)}
+.hist-photo{aspect-ratio:4/5;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg);position:relative}
+.hist-photo img{width:100%;height:100%;object-fit:cover}
+
+.story-section{background:#fff}
+.story-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.story-section h2{font-weight:800;font-size:46px;line-height:1.05;letter-spacing:-.025em;color:var(--ink);margin-bottom:24px}
+.story-section h2 .accent{color:var(--orange)}
+.story-section p{font-size:17px;color:var(--tx-2);line-height:1.7;margin-bottom:18px}
+.story-section p strong{color:var(--ink);font-weight:600}
+.story-section .pull{font-size:24px;font-weight:600;color:var(--green);line-height:1.4;padding:24px 28px;border-left:3px solid var(--orange);margin:28px 0;background:var(--green-pale);border-radius:0 var(--r) var(--r) 0}
+.story-photo{aspect-ratio:4/5;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow);position:sticky;top:96px}
+.story-photo img{width:100%;height:100%;object-fit:cover}
+
+.duo-band{background:var(--ink);color:#fff;padding:80px 0;position:relative;overflow:hidden;text-align:center}
+.duo-band::before{content:"";position:absolute;top:-100px;left:-80px;width:300px;height:300px;background:var(--orange);border-radius:50%;opacity:.10}
+.duo-band::after{content:"";position:absolute;bottom:-120px;right:-60px;width:280px;height:280px;background:var(--green);border-radius:50%;opacity:.15}
+.duo-inner{position:relative;z-index:1;max-width:880px;margin:0 auto;padding:0 32px}
+.duo-band .caps{color:var(--orange);margin-bottom:18px;display:inline-block}
+.duo-band h2{font-weight:800;font-size:54px;line-height:1.05;letter-spacing:-.03em;margin-bottom:24px}
+.duo-band h2 .accent{color:var(--orange)}
+.duo-band p{font-size:18px;color:rgba(255,255,255,.85);line-height:1.65;max-width:720px;margin:0 auto 28px}
+.duo-band p strong{color:#fff;font-weight:700}
+.duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;text-align:left}
+.duo-card{background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:32px}
+.duo-card .role-lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-soft);font-weight:700;margin-bottom:12px}
+.duo-card h3{font-size:24px;font-weight:800;margin-bottom:10px;letter-spacing:-.01em;line-height:1.1}
+.duo-card p{font-size:15px;color:rgba(255,255,255,.75);line-height:1.55;margin:0}
+
+.timeline-wrap{background:var(--bg-2)}
+.timeline{max-width:760px;margin:0 auto;position:relative}
+.timeline::before{content:"";position:absolute;left:18px;top:14px;bottom:14px;width:2px;background:var(--green-soft)}
+.tl-item{position:relative;padding-left:60px;padding-bottom:36px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:9px;top:6px;width:22px;height:22px;border-radius:50%;background:var(--orange);border:4px solid var(--bg-2);z-index:1}
+.tl-date{font-size:13px;font-weight:700;color:var(--orange-2);letter-spacing:.05em;margin-bottom:8px;text-transform:uppercase}
+.tl-title{font-size:22px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.01em}
+.tl-text{font-size:15.5px;color:var(--tx-2);line-height:1.6}
+
+.valeurs{background:var(--green-pale)}
+.valeurs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.valeur-card{background:#fff;border-radius:var(--r-lg);padding:36px;border:1px solid var(--green-soft);position:relative}
+.valeur-card .ic{width:54px;height:54px;border-radius:16px;background:var(--orange-pale);color:var(--orange-2);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.valeur-card.green .ic{background:var(--green);color:#fff}
+.valeur-card h3{font-size:24px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em}
+.valeur-card p{font-size:15px;color:var(--tx-2);line-height:1.6}
+.valeur-card p em{color:var(--green);font-style:normal;font-weight:600}
+
+.vision{background:linear-gradient(180deg,var(--bg) 0%,var(--orange-pale) 100%);padding:120px 0;position:relative;overflow:hidden}
+.vision::before{content:"";position:absolute;top:60px;left:-60px;width:240px;height:240px;background:var(--green-pale);border-radius:50%;opacity:.7}
+.vision::after{content:"";position:absolute;bottom:-80px;right:-60px;width:300px;height:300px;background:#fff;border-radius:50%;opacity:.7}
+.vision-inner{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:0 32px;text-align:center}
+.vision .caps{color:var(--orange-2);margin-bottom:18px;display:inline-block}
+.vision h2{font-weight:800;font-size:54px;line-height:1.05;letter-spacing:-.025em;color:var(--ink);margin-bottom:24px}
+.vision h2 .accent{color:var(--orange)}
+.vision p{font-size:18px;color:var(--tx);line-height:1.65;margin-bottom:24px}
+.vision .quote-card{background:#fff;border-radius:var(--r-xl);padding:48px 40px;margin:48px 0;box-shadow:var(--shadow);border:1px solid var(--line)}
+.vision .quote-card .qt{font-family:'Caveat',cursive;font-size:42px;font-weight:700;color:var(--orange-2);line-height:1.2;margin-bottom:20px}
+.vision .quote-card .qtsub{font-size:16px;color:var(--tx-2);line-height:1.6}
+.vision .signature{font-family:'Caveat',cursive;font-size:30px;color:var(--green);font-weight:500;margin-top:24px;display:inline-block}
+
+@media(max-width:1080px){
+  .hist-hero-grid,.story-grid,.duo-grid{grid-template-columns:1fr;gap:48px}
+  .story-photo{position:static}
+  .valeurs-grid{grid-template-columns:1fr}
+  .hist-hero h1{font-size:42px}
+  .story-section h2,.vision h2,.duo-band h2{font-size:36px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <div class="nav-row">
+      <a href="mybatch_v2.html" class="brand">
+        <div class="brand-mark"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(10 16 16)"><path d="M12 6 L13 6 L13 12 L14 12 L14 6 L15 6 L15 12 L16 12 L16 6 L17 6 L17 12 L18 12 L18 6 L19 6 L19 12 L19.5 12 L19.5 13.5 L17 16 L17 22 L14 22 L14 16 L11.5 13.5 L11.5 12 L12 12 Z" fill="#fff" stroke="none"/><path d="M14 22 L17 22 L17 25 Q17 27 15.5 27 Q14 27 14 25 Z" fill="#E8843D" stroke="none"/><circle cx="22" cy="9" r="1.4" fill="#E8843D" stroke="none"/></g></svg></div>
+        <div class="brand-name">my batch<span class="dot">.</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="mybatch_v2.html#features">L'app</a></li>
+        <li><a href="mybatch_guide.html">Le guide</a></li>
+        <li><a href="mybatch_v2.html#tarifs">Tarifs</a></li>
+        <li><a href="mybatch_histoire.html" class="active">L'histoire</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost">Se connecter</a>
+        <a href="#" class="btn btn-orange">Essai gratuit 7j</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hist-hero">
+  <div class="wrap">
+    <div class="hist-hero-grid">
+      <div>
+        <span class="caps">Notre histoire</span>
+        <h1 style="margin-top:14px">Une batchcookeuse. <span class="accent">Un développeur.</span></h1>
+        <p class="lead">my batch n'a pas été pensé dans un open-space. Il est né dans <em>notre salon</em> — entre une batchcookeuse épuisée par ses soirées de gestion, et un développeur qui a décidé de l'aider.</p>
+      </div>
+      <div class="hist-photo">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=900&q=85&auto=format&fit=crop" alt="La cuisine batch cooking">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-section">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-photo">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=85&auto=format&fit=crop" alt="Cuisine maison">
+      </div>
+      <div>
+        <span class="caps">Comment c'est né</span>
+        <h2 style="margin-top:14px">Cette histoire <span class="accent">n'est pas la mienne.</span></h2>
+        <p>Cette histoire, c'est d'abord celle de ma femme. Elle est batchcookeuse à Bordeaux depuis 2025. Elle adore son métier — la cuisine, ses clientes, le sentiment de remplir leur frigo pour la semaine entière. Le matin elle cuisine, l'après-midi elle se repose un peu.</p>
+        <p>Et le soir... <strong>le soir, elle était devant son ordi</strong>. Word pour taper les menus. Excel pour faire les listes de courses. WhatsApp ouvert sur 15 conversations clientes. Des fichiers de factures éparpillés dans des dossiers. Jusqu'à minuit, parfois plus. Tous les soirs.</p>
+        <p>Moi, je suis son mari, et je suis développeur d'applications. Je rentrais le soir et je la voyais <strong>épuisée — pas par sa cuisine, qu'elle adore, mais par tout ce qui vient autour</strong>.</p>
+        <p>Un soir, je lui ai dit : « tu sais que ce que tu fais à la main, c'est exactement ce que mon métier sait automatiser ? »</p>
+
+        <div class="pull">« Vas-y, alors. Fais-le. »</div>
+
+        <p>J'ai commencé à coder le soir. D'abord pour elle, juste pour elle. La première version a remplacé son Excel et son Word. <strong>Elle a gagné 3 heures la première semaine.</strong> Une amie batchcookeuse l'a vue avec son app, elle a voulu la même. Puis une autre. Puis dix.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE DUO BAND -->
+<section class="duo-band">
+  <div class="duo-inner">
+    <span class="caps">Ce qui fait la différence</span>
+    <h2>La cuisine a rencontré <span class="accent">la technologie.</span></h2>
+    <p>my batch n'est pas une app tech faite par des devs déconnectés du métier. C'est ce qui se passe quand <strong>l'expérience terrain d'une batchcookeuse pilote la conception</strong>, et qu'un <strong>développeur la traduit en code</strong>.</p>
+    <p style="font-size:22px;line-height:1.4;color:#fff;font-weight:600;margin-top:24px">Une app pour les batchcookeuses, <span class="accent" style="color:var(--orange-soft)">faite par une batchcookeuse</span>.</p>
+
+    <div class="duo-grid">
+      <div class="duo-card">
+        <div class="role-lbl">Le métier</div>
+        <h3>Elle, batchcookeuse</h3>
+        <p>Toute l'expérience terrain. Chaque feature de l'app vient d'un vrai besoin vécu, pas d'une hypothèse en réunion. Si quelque chose la freine dans sa journée, c'est priorisé.</p>
+      </div>
+      <div class="duo-card">
+        <div class="role-lbl">La tech</div>
+        <h3>Lui, développeur</h3>
+        <p>15 ans de code dans les pattes. Il traduit son expérience en outil simple, stable et qui marche vraiment. Pas de fioritures, pas de marketing — juste ce qui résout le problème.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-wrap">
+  <div class="wrap">
+    <div class="sect-head">
+      <span class="caps">Notre parcours</span>
+      <h2>Le chemin <span class="accent">jusqu'ici.</span></h2>
+      <p>L'histoire courte d'un outil construit à deux, à temps perdu, pour résoudre un vrai problème.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Septembre 2025</div>
+        <div class="tl-title">Le début de son activité</div>
+        <div class="tl-text">Elle se lance comme batchcookeuse à Bordeaux. Les premières clientes arrivent. Avec elles, les premières soirées tard devant l'ordi.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Novembre 2025</div>
+        <div class="tl-title">La décision</div>
+        <div class="tl-text">Je la vois s'épuiser tous les soirs sur Excel et Word. Je décide de construire un outil sur mesure, pour elle. Premières lignes de code à temps perdu.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Janvier 2026</div>
+        <div class="tl-title">Première version utilisable</div>
+        <div class="tl-text">Elle utilise l'app pour gérer ses 8 clientes. Elle gagne 3 heures la première semaine. Une amie batchcookeuse la voit et veut la même.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Mars 2026</div>
+        <div class="tl-title">Lancement public</div>
+        <div class="tl-text">my batch ouvre aux autres batchcookeuses. 15 utilisatrices à la fin du mois. Le guide est rédigé pour celles qui se lancent.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Juin 2026</div>
+        <div class="tl-title">32 batchcookeuses, on continue</div>
+        <div class="tl-text">L'app sert maintenant 32 batchcookeuses dans toute la France. Le binôme cuisine-tech derrière le produit reste le même.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section class="valeurs">
+  <div class="wrap">
+    <div class="sect-head">
+      <span class="caps">Nos valeurs</span>
+      <h2>Trois <span class="accent">obsessions.</span></h2>
+      <p>Tout ce qu'on construit, tout ce qu'on refuse, est guidé par ces trois engagements.</p>
+    </div>
+    <div class="valeurs-grid">
+      <div class="valeur-card green">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Le temps redonné</h3>
+        <p>Notre seule obsession : vous faire gagner <em>5 heures par semaine</em>. Si une feature ne vous fait pas gagner du temps, elle ne rentre pas dans l'app.</p>
+      </div>
+      <div class="valeur-card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <h3>La batchcookeuse respectée</h3>
+        <p>Pas de course aux prix, pas de commissions cachées. Vous gardez <em>100 %</em> de vos gains. Vous personnalisez l'app à votre image.</p>
+      </div>
+      <div class="valeur-card">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h3>Le métier transmis</h3>
+        <p>Le guide n'est pas un produit additionnel : c'est <em>l'héritage</em>. Pour que celles qui démarrent puissent réussir comme celles qui sont déjà installées.</p>
+      </div>
+      <div class="valeur-card green">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c2-4 4-5 9-5s7 1 9 5"/><path d="M3 12c2 4 4 5 9 5s7-1 9-5"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <h3>Le métier valorisé</h3>
+        <p>Batchcookeuse, c'est un vrai métier. Pas un hobby, pas du dépannage. Notre app est conçue pour qu'on en vive <em>dignement</em>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision">
+  <div class="vision-inner">
+    <span class="caps">Où on va</span>
+    <h2 style="margin-top:14px">Faire de batchcookeuse <span class="accent">un vrai métier.</span></h2>
+    <p>Pas une activité bricolée à côté. Pas un complément de revenu sous-payé. Un vrai métier d'indépendante, qui se vit dignement et qui dure.</p>
+
+    <div class="quote-card">
+      <div class="qt">« Une app pour les batchcookeuses, faite par une batchcookeuse. »</div>
+      <div class="qtsub">C'est ce qui se passe quand l'expérience terrain pilote la conception,<br>et qu'un développeur la traduit en code.<br><br>C'est ça la différence. C'est tout ce qui compte.</div>
+    </div>
+
+    <div style="margin-top:24px">
+      <a href="mybatch_v2.html#tarifs" class="btn btn-orange btn-lg">Découvrir l'app →</a>
+    </div>
+    <div class="signature">— Le duo my batch</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="mybatch_v2.html" class="brand">
+          <div class="brand-mark"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(10 16 16)"><path d="M12 6 L13 6 L13 12 L14 12 L14 6 L15 6 L15 12 L16 12 L16 6 L17 6 L17 12 L18 12 L18 6 L19 6 L19 12 L19.5 12 L19.5 13.5 L17 16 L17 22 L14 22 L14 16 L11.5 13.5 L11.5 12 L12 12 Z" fill="#fff" stroke="none"/><path d="M14 22 L17 22 L17 25 Q17 27 15.5 27 Q14 27 14 25 Z" fill="#E8843D" stroke="none"/><circle cx="22" cy="9" r="1.4" fill="#E8843D" stroke="none"/></g></svg></div>
+          <div class="brand-name">my batch<span class="dot">.</span></div>
+        </a>
+        <p>L'app pensée pour les batchcookeuses indépendantes.</p>
+      </div>
+      <div class="foot-col"><h4>Produit</h4><ul><li><a href="mybatch_v2.html#features">L'app</a></li><li><a href="mybatch_v2.html#tarifs">Tarifs</a></li><li><a href="#">Se connecter</a></li></ul></div>
+      <div class="foot-col"><h4>Ressources</h4><ul><li><a href="mybatch_guide.html">Le guide</a></li><li><a href="#">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>my batch</h4><ul><li><a href="mybatch_histoire.html">L'histoire</a></li><li><a href="#">Contact</a></li><li><a href="#">CGU</a></li></ul></div>
+    </div>
+    <div class="foot-bot">
+      <div class="copy">© 2026 my batch — Tous droits réservés</div>
+      <div class="made">Pensé et fait en France.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

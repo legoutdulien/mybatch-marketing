@@ -1,0 +1,12 @@
+﻿[build]
+  publish = "."
+
+[[redirects]]
+  from = "/se-connecter"
+  to = "https://app.mybatch.cooking"
+  status = 302
+
+[[redirects]]
+  from = "/app"
+  to = "https://app.mybatch.cooking"
+  status = 302

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le guide complet — Version intégrale · my batch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mybatch_styles.css">
+<style>
+.unlock-banner{background:linear-gradient(90deg,var(--green) 0%,var(--green-2) 100%);color:#fff;padding:14px 0;font-size:13px;text-align:center;font-weight:600}
+.unlock-banner .ic{margin-right:8px}
+
+.guide-hero{padding:70px 0 50px;background:linear-gradient(180deg,var(--green-pale) 0%,var(--bg) 100%);border-bottom:1px solid var(--green-soft);position:relative;overflow:hidden}
+.guide-hero::before{content:"";position:absolute;top:-80px;right:-60px;width:280px;height:280px;background:var(--orange-pale);border-radius:50%;opacity:.5;z-index:0}
+.guide-hero .wrap{position:relative;z-index:1}
+.guide-hero .eyebrow-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.guide-hero .eyebrow-row span{background:#fff;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:600;color:var(--green);border:1px solid var(--green-soft);display:inline-flex;align-items:center;gap:6px}
+.guide-hero .eyebrow-row .ck{color:var(--orange)}
+.guide-hero h1{font-weight:800;font-size:56px;line-height:1.02;letter-spacing:-.03em;color:var(--ink);margin-bottom:18px;max-width:840px}
+.guide-hero h1 .accent{color:var(--orange)}
+.guide-hero .lead{font-size:18px;color:var(--tx-2);line-height:1.55;max-width:760px}
+
+.download-bar{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 24px;margin-top:30px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.download-bar .lbl{flex:1;min-width:200px}
+.download-bar .lbl strong{display:block;font-size:14px;color:var(--ink);font-weight:700;margin-bottom:3px}
+.download-bar .lbl span{font-size:12.5px;color:var(--muted)}
+.download-bar .actions{display:flex;gap:8px;flex-wrap:wrap}
+.download-bar .actions a{padding:10px 16px;border-radius:999px;background:var(--green);color:#fff;font-size:13px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .2s}
+.download-bar .actions a:hover{background:var(--green-3)}
+.download-bar .actions a.alt{background:#fff;color:var(--green);border:1.5px solid var(--green)}
+.download-bar .actions a.alt:hover{background:var(--green-pale)}
+
+.guide-layout{display:grid;grid-template-columns:260px 1fr;gap:60px;padding:60px 0 80px}
+.guide-toc{position:sticky;top:96px;align-self:start;max-height:calc(100vh - 120px);overflow-y:auto;padding-right:12px}
+.guide-toc .toc-title{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);font-weight:700;margin-bottom:14px}
+.guide-toc ol{list-style:none;counter-reset:section}
+.guide-toc li{counter-increment:section;margin-bottom:4px}
+.guide-toc a{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--tx-2);padding:7px 12px;border-radius:8px;transition:all .15s;line-height:1.4}
+.guide-toc a::before{content:counter(section,decimal-leading-zero);font-weight:700;color:var(--muted);font-size:11px;letter-spacing:.05em;flex-shrink:0;margin-top:2px}
+.guide-toc a:hover{background:var(--bg-2);color:var(--ink)}
+.guide-toc .toc-bonus{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.guide-toc .toc-bonus a::before{content:"★";color:var(--orange)}
+
+.guide-content{max-width:760px}
+.guide-section{margin-bottom:60px;scroll-margin-top:120px}
+.guide-section .chapter-num{font-size:13px;font-weight:700;color:var(--orange-2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:block}
+.guide-section h2{font-size:34px;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin-bottom:18px;line-height:1.15}
+.guide-section h2 .accent{color:var(--orange)}
+.guide-section h3{font-size:20px;font-weight:700;color:var(--ink);margin-top:32px;margin-bottom:12px;letter-spacing:-.01em}
+.guide-section h4{font-size:16px;font-weight:700;color:var(--ink);margin-top:24px;margin-bottom:10px}
+.guide-section p{font-size:16px;color:var(--tx);line-height:1.7;margin-bottom:16px}
+.guide-section p strong{color:var(--ink);font-weight:700}
+.guide-section ul,.guide-section ol{margin:14px 0 20px 22px;font-size:16px;color:var(--tx);line-height:1.7}
+.guide-section li{margin-bottom:8px}
+.guide-section li strong{color:var(--ink)}
+.guide-section .key-box{background:var(--green-pale);border-left:3px solid var(--green);padding:20px 24px;border-radius:0 var(--r) var(--r) 0;margin:24px 0}
+.guide-section .key-box .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--green);font-weight:700;margin-bottom:8px}
+.guide-section .key-box p{font-size:15px;color:var(--tx);margin:0;line-height:1.55}
+.guide-section .warn-box{background:var(--orange-pale);border-left:3px solid var(--orange);padding:20px 24px;border-radius:0 var(--r) var(--r) 0;margin:24px 0}
+.guide-section .warn-box .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--orange-2);font-weight:700;margin-bottom:8px}
+.guide-section .warn-box p{font-size:15px;color:var(--tx);margin:0;line-height:1.55}
+.guide-section .script-box{background:var(--bg-2);border-left:3px solid var(--ink);padding:20px 24px;border-radius:0 var(--r) var(--r) 0;margin:24px 0;font-style:italic}
+.guide-section .script-box .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);font-weight:700;margin-bottom:8px;font-style:normal}
+.guide-section .script-box p{font-size:15px;color:var(--tx);margin:0;line-height:1.6;font-style:italic}
+.guide-section table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px}
+.guide-section th{text-align:left;padding:12px 14px;background:var(--bg-2);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);border-bottom:1px solid var(--line)}
+.guide-section td{padding:14px;border-bottom:1px solid var(--line);color:var(--tx);vertical-align:top}
+.guide-section td:first-child{font-weight:600;color:var(--ink)}
+
+/* BONUS - downloadable resources */
+.bonus-section{margin-top:80px;padding-top:60px;border-top:2px dashed var(--orange)}
+.bonus-section .b-eyebrow{font-size:11px;font-weight:700;color:var(--orange-2);letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;display:block}
+.bonus-section h2{font-size:42px;font-weight:800;letter-spacing:-.025em;color:var(--ink);line-height:1.05;margin-bottom:16px}
+.bonus-section h2 .accent{color:var(--orange)}
+.bonus-section .lead{font-size:17px;color:var(--tx-2);line-height:1.6;margin-bottom:36px;max-width:680px}
+
+.bonus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:48px}
+.bonus-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;transition:all .2s}
+.bonus-card:hover{border-color:var(--orange);box-shadow:var(--shadow)}
+.bonus-card .b-type{font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.bonus-card .b-type .icon{font-size:14px}
+.bonus-card h3{font-size:17px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
+.bonus-card p{font-size:13.5px;color:var(--tx-2);line-height:1.55;margin-bottom:14px}
+.bonus-card a{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--orange-2);text-decoration:none}
+.bonus-card a:hover{color:var(--orange-3)}
+
+.final-cta{background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:48px 40px;text-align:center;margin-top:48px;position:relative;overflow:hidden}
+.final-cta::before{content:"";position:absolute;top:-80px;right:-80px;width:240px;height:240px;background:var(--orange);border-radius:50%;opacity:.15}
+.final-cta .inner{position:relative;z-index:1}
+.final-cta h3{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:14px;line-height:1.1}
+.final-cta p{font-size:15px;color:rgba(255,255,255,.78);line-height:1.6;margin-bottom:24px;max-width:520px;margin-left:auto;margin-right:auto}
+
+@media(max-width:1080px){
+  .guide-layout{grid-template-columns:1fr;gap:32px}
+  .guide-toc{position:static;max-height:none}
+  .guide-hero h1{font-size:38px}
+  .guide-section h2{font-size:26px}
+  .bonus-section h2{font-size:30px}
+  .bonus-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- UNLOCK BANNER -->
+<div class="unlock-banner">
+  <span class="ic">🔓</span> Bienvenue dans la version complète — débloquée
+</div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <div class="nav-row">
+      <a href="mybatch_v2.html" class="brand">
+        <div class="brand-mark"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(10 16 16)"><path d="M12 6 L13 6 L13 12 L14 12 L14 6 L15 6 L15 12 L16 12 L16 6 L17 6 L17 12 L18 12 L18 6 L19 6 L19 12 L19.5 12 L19.5 13.5 L17 16 L17 22 L14 22 L14 16 L11.5 13.5 L11.5 12 L12 12 Z" fill="#fff" stroke="none"/><path d="M14 22 L17 22 L17 25 Q17 27 15.5 27 Q14 27 14 25 Z" fill="#E8843D" stroke="none"/><circle cx="22" cy="9" r="1.4" fill="#E8843D" stroke="none"/></g></svg></div>
+        <div class="brand-name">my batch<span class="dot">.</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="mybatch_v2.html#features">L'app</a></li>
+        <li><a href="mybatch_guide_complet.html" class="active">Le guide</a></li>
+        <li><a href="mybatch_v2.html#tarifs">Tarifs</a></li>
+        <li><a href="mybatch_histoire.html">L'histoire</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost">Mon compte</a>
+        <a href="#bonus" class="btn btn-orange">Bonus &amp; PDFs</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="guide-hero">
+  <div class="wrap">
+    <div class="eyebrow-row">
+      <span><span class="ck">✓</span> Version intégrale</span>
+      <span><span class="ck">✓</span> 14 chapitres + 8 bonus</span>
+      <span><span class="ck">✓</span> Mises à jour à vie</span>
+    </div>
+    <h1>Le guide complet, <span class="accent">débloqué.</span></h1>
+    <p class="lead">Voici la version intégrale du guide. Tous les chapitres, tous les modèles téléchargeables, tous les scripts. Vous pouvez aussi télécharger le PDF complet pour le lire hors ligne ou l'imprimer.</p>
+
+    <div class="download-bar">
+      <div class="lbl">
+        <strong>📕 Le guide en PDF (152 pages)</strong>
+        <span>Fichier complet à télécharger ou imprimer. Mis à jour le 1<sup>er</sup> juin 2026.</span>
+      </div>
+      <div class="actions">
+        <a href="#">📥 Télécharger le PDF</a>
+        <a href="#" class="alt">🖨️ Version impression</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="wrap">
+  <div class="guide-layout">
+
+    <!-- TOC -->
+    <aside class="guide-toc">
+      <div class="toc-title">Sommaire</div>
+      <ol>
+        <li><a href="#ch1">Le batch cooking, c'est quoi</a></li>
+        <li><a href="#ch2">Le métier en chiffres</a></li>
+        <li><a href="#ch3">Est-ce que c'est pour vous</a></li>
+        <li><a href="#ch4">Le statut juridique (URSSAF)</a></li>
+        <li><a href="#ch5">Combien on peut gagner</a></li>
+        <li><a href="#ch6">Tarifer son service</a></li>
+        <li><a href="#ch7">Le crédit d'impôt en détail</a></li>
+        <li><a href="#ch8">Se former (HACCP, etc.)</a></li>
+        <li><a href="#ch9">Trouver ses premières clientes</a></li>
+        <li><a href="#ch10">La semaine type</a></li>
+        <li><a href="#ch11">Les outils indispensables</a></li>
+        <li><a href="#ch12">Erreurs à éviter</a></li>
+        <li><a href="#ch13">Évoluer dans le temps</a></li>
+        <li><a href="#ch14">Et maintenant</a></li>
+      </ol>
+      <div class="toc-bonus">
+        <div class="toc-title" style="color:var(--orange-2)">Bonus inclus</div>
+        <ol style="counter-reset:none">
+          <li><a href="#bonus">8 modèles téléchargeables</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <!-- CONTENT - Same as the preview page but no paywall, fully accessible -->
+    <main class="guide-content">
+
+      <section class="guide-section" id="ch1">
+        <span class="chapter-num">Chapitre 01</span>
+        <h2>Le batch cooking à domicile, <span class="accent">c'est quoi.</span></h2>
+        <p>Le batch cooking, c'est cuisiner plusieurs plats en une seule fois pour toute la semaine. À domicile, c'est encore mieux : <strong>vous allez chez votre cliente, vous utilisez sa cuisine, et vous lui préparez en une matinée 5 plats faits maison pour 5 à 7 jours</strong>.</p>
+        <p>Concrètement, le déroulé est toujours le même. Vous arrivez chez votre cliente avec les courses (ou elle les a faites). Vous cuisinez pendant 3 heures dans sa cuisine. Vous conditionnez les 5 plats dans des contenants hermétiques. Vous laissez la cuisine propre. Vous repartez. La cliente n'a plus qu'à réchauffer ses plats au fur et à mesure de la semaine.</p>
+        <div class="key-box">
+          <div class="lbl">L'idée centrale</div>
+          <p>Vous ne vendez pas des plats. Vous vendez <strong>du temps et de la sérénité</strong> à votre cliente : ~8 heures gagnées par semaine sur les courses et la cuisine, et zéro charge mentale du repas du soir.</p>
+        </div>
+        <h3>Pourquoi ça marche maintenant</h3>
+        <p>Trois forces se rencontrent en 2026 : les familles n'ont plus le temps de cuisiner, les plats préparés industriels saturent, et le crédit d'impôt 50 % rend le service abordable.</p>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Texte complet du chapitre dans le PDF —</p>
+      </section>
+
+      <section class="guide-section" id="ch2">
+        <span class="chapter-num">Chapitre 02</span>
+        <h2>Le métier en <span class="accent">chiffres.</span></h2>
+        <p>Avant d'aller plus loin, voici les ordres de grandeur du métier en France en 2026. Tous les chiffres sont basés sur les pratiques actuelles des batchcookeuses du réseau.</p>
+        <table>
+          <thead><tr><th>Interventions/semaine</th><th>CA mensuel</th><th>Net après URSSAF</th><th>Net après frais</th></tr></thead>
+          <tbody>
+            <tr><td>3 interventions</td><td>1 440 €</td><td>1 123 €</td><td>~ 990 €</td></tr>
+            <tr><td>5 interventions</td><td>2 400 €</td><td>1 872 €</td><td>~ 1 650 €</td></tr>
+            <tr><td>8 interventions</td><td>3 840 €</td><td>2 995 €</td><td>~ 2 640 €</td></tr>
+            <tr><td>10 interventions</td><td>4 800 €</td><td>3 744 €</td><td>~ 3 300 €</td></tr>
+          </tbody>
+        </table>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Texte complet du chapitre dans le PDF —</p>
+      </section>
+
+      <section class="guide-section" id="ch3">
+        <span class="chapter-num">Chapitre 03</span>
+        <h2>Est-ce que c'est <span class="accent">pour vous ?</span></h2>
+        <p>Les 5 questions à se poser avant de se lancer. Les 3 profils qui réussissent. Les 3 qui galèrent. Le test d'auto-évaluation honnête.</p>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral disponible dans le PDF complet —</p>
+      </section>
+
+      <section class="guide-section" id="ch4">
+        <span class="chapter-num">Chapitre 04</span>
+        <h2>Le statut juridique <span class="accent">URSSAF.</span></h2>
+        <p>Les 7 étapes de création de l'auto-entreprise pas à pas. Choix du code APE (56.21Z vs 96.09Z). Déclaration SAP DDETS. RC Pro. Compte bancaire pro. Plafonds 2026 et passage SASU.</p>
+        <div class="key-box">
+          <div class="lbl">Inclus dans la version complète</div>
+          <p>📥 <strong>Captures d'écran annotées</strong> de chaque étape du formulaire URSSAF + <strong>fiche checklist J+0 à J+30</strong> à imprimer + <strong>modèle de mentions légales facture</strong>.</p>
+        </div>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral (12 pages) disponible dans le PDF complet —</p>
+      </section>
+
+      <section class="guide-section" id="ch5">
+        <span class="chapter-num">Chapitre 05</span>
+        <h2>Combien <span class="accent">on peut gagner.</span></h2>
+        <p>Calcul détaillé d'une intervention. Tableau de scénarios mensuels. Saisonnalité à anticiper. Quand passer à temps plein.</p>
+        <div class="key-box">
+          <div class="lbl">Inclus dans la version complète</div>
+          <p>📥 <strong>Tableur Excel</strong> "Simulateur de revenus" personnalisable selon votre tarif, votre rythme et votre zone géographique.</p>
+        </div>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral disponible dans le PDF complet —</p>
+      </section>
+
+      <section class="guide-section" id="ch6">
+        <span class="chapter-num">Chapitre 06</span>
+        <h2>Tarifer son <span class="accent">service.</span></h2>
+        <p>Méthodologie de calcul. 3 forfaits types. Comment annoncer le prix sans complexe. Évolution des tarifs dans le temps.</p>
+        <div class="key-box">
+          <div class="lbl">Inclus dans la version complète</div>
+          <p>📥 <strong>Scripts d'annonce de prix</strong> (3 versions : par SMS, par téléphone, en personne) + <strong>argumentaire complet</strong> face aux objections classiques.</p>
+        </div>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral disponible dans le PDF complet —</p>
+      </section>
+
+      <section class="guide-section" id="ch7">
+        <span class="chapter-num">Chapitre 07</span>
+        <h2>Le crédit d'impôt <span class="accent">en détail.</span></h2>
+        <p>Cadre légal SAP. Mécanique avance immédiate CESU+. Inscription cliente étape par étape. Exemple chiffré complet. Comment l'expliquer à la cliente. FAQ.</p>
+        <div class="key-box">
+          <div class="lbl">Inclus dans la version complète</div>
+          <p>📥 <strong>Tuto vidéo</strong> (12 min) : "J'accompagne ma cliente dans l'inscription CESU+ en direct" + <strong>fiche récap PDF</strong> à donner à votre cliente lors du premier rendez-vous.</p>
+        </div>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral (15 pages) disponible dans le PDF complet —</p>
+      </section>
+
+      <section class="guide-section" id="ch8">
+        <span class="chapter-num">Chapitre 08</span>
+        <h2>Se <span class="accent">former.</span></h2>
+        <p>HACCP : pourquoi, où, combien. Formations spécifiques batch cooking. Formation entrepreneuriat AE. Ressources auto-formation.</p>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral disponible dans le PDF complet —</p>
+      </section>
+
+      <section class="guide-section" id="ch9">
+        <span class="chapter-num">Chapitre 09</span>
+        <h2>Trouver ses premières <span class="accent">clientes.</span></h2>
+        <p>Les 5 canaux qui marchent. Bouche-à-oreille. Réseaux sociaux locaux. Affichage physique. Partenariats. Parrainage.</p>
+        <div class="key-box">
+          <div class="lbl">Inclus dans la version complète</div>
+          <p>📥 <strong>10 templates de posts</strong> Insta/Facebook prêts à publier + <strong>script DM</strong> de premier contact + <strong>modèle d'affiche A5</strong> imprimable.</p>
+        </div>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral (10 pages) disponible dans le PDF complet —</p>
+      </section>
+
+      <section class="guide-section" id="ch10">
+        <span class="chapter-num">Chapitre 10</span>
+        <h2>La semaine <span class="accent">type.</span></h2>
+        <p>3 exemples de semaines (3, 6, 8 interventions). Routine du dimanche soir. Gestion des congés.</p>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral disponible dans le PDF complet —</p>
+      </section>
+
+      <section class="guide-section" id="ch11">
+        <span class="chapter-num">Chapitre 11</span>
+        <h2>Les outils <span class="accent">indispensables.</span></h2>
+        <p>Kit cuisine détaillé avec marques recommandées. Documents pro. Outil logiciel.</p>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral disponible dans le PDF complet —</p>
+      </section>
+
+      <section class="guide-section" id="ch12">
+        <span class="chapter-num">Chapitre 12</span>
+        <h2>Erreurs <span class="accent">à éviter.</span></h2>
+        <p>Les 10 erreurs les plus communes, avec leur cause profonde et comment les éviter.</p>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral disponible dans le PDF complet —</p>
+      </section>
+
+      <section class="guide-section" id="ch13">
+        <span class="chapter-num">Chapitre 13</span>
+        <h2>Évoluer <span class="accent">dans le temps.</span></h2>
+        <p>Étapes mois par mois sur 24 mois. Voies d'évolution après l'année 2.</p>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral disponible dans le PDF complet —</p>
+      </section>
+
+      <section class="guide-section" id="ch14">
+        <span class="chapter-num">Chapitre 14</span>
+        <h2>Et <span class="accent">maintenant.</span></h2>
+        <p>Checklist actionnable J+0 à J+30. Ressources additionnelles. Communauté. Mot de la fin.</p>
+        <p style="color:var(--muted);font-size:14px;font-style:italic">— Chapitre intégral disponible dans le PDF complet —</p>
+      </section>
+
+      <!-- BONUS -->
+      <section class="bonus-section" id="bonus">
+        <span class="b-eyebrow">★ Bonus inclus dans la version complète</span>
+        <h2>8 modèles téléchargeables, <span class="accent">prêts à l'emploi.</span></h2>
+        <p class="lead">Tout ce qu'il faut pour passer du guide à l'action. Chaque modèle est éditable (Word, Excel ou PDF) et personnalisable à votre activité.</p>
+
+        <div class="bonus-grid">
+          <div class="bonus-card">
+            <div class="b-type"><span class="icon">📄</span>Contrat / Modèle Word</div>
+            <h3>Contrat type cliente</h3>
+            <p>Modèle de mini-contrat à signer avec chaque nouvelle cliente : engagement, allergies, modalités d'annulation, tarif. Conforme RGPD.</p>
+            <a href="#">📥 Télécharger (.docx)</a>
+          </div>
+
+          <div class="bonus-card">
+            <div class="b-type"><span class="icon">📊</span>Tableur Excel</div>
+            <h3>Simulateur de revenus</h3>
+            <p>Tableau Excel personnalisable : entrez votre tarif, votre rythme et votre zone, obtenez votre revenu net mensuel et annuel projeté.</p>
+            <a href="#">📥 Télécharger (.xlsx)</a>
+          </div>
+
+          <div class="bonus-card">
+            <div class="b-type"><span class="icon">💬</span>Pack scripts</div>
+            <h3>10 scripts prêts à l'emploi</h3>
+            <p>Scripts pour annoncer votre prix, expliquer le crédit d'impôt, gérer une annulation, demander une recommandation, etc.</p>
+            <a href="#">📥 Télécharger (.pdf)</a>
+          </div>
+
+          <div class="bonus-card">
+            <div class="b-type"><span class="icon">📱</span>Pack social media</div>
+            <h3>10 templates posts Insta/FB</h3>
+            <p>Templates de posts pour démarrer votre communication. Coup d'œil avant/après frigo, posts coulisses, témoignage cliente, etc.</p>
+            <a href="#">📥 Télécharger (.zip)</a>
+          </div>
+
+          <div class="bonus-card">
+            <div class="b-type"><span class="icon">🖨️</span>Modèle imprimable</div>
+            <h3>Affiche A5 prospection</h3>
+            <p>Modèle d'affiche A5 prêt à imprimer pour boulangeries, écoles, salles de sport. Avec QR code personnalisable.</p>
+            <a href="#">📥 Télécharger (.pdf)</a>
+          </div>
+
+          <div class="bonus-card">
+            <div class="b-type"><span class="icon">📋</span>Fiche cliente</div>
+            <h3>Fiche allergies / préférences</h3>
+            <p>Fiche à remplir avec chaque nouvelle cliente : allergies, régimes, plats préférés, plats à éviter, taille de portions.</p>
+            <a href="#">📥 Télécharger (.pdf)</a>
+          </div>
+
+          <div class="bonus-card">
+            <div class="b-type"><span class="icon">🎥</span>Tuto vidéo</div>
+            <h3>Inscription CESU+ pas à pas</h3>
+            <p>Tuto vidéo (12 min) : "J'accompagne ma cliente dans l'inscription CESU+ pour l'avance immédiate du crédit d'impôt".</p>
+            <a href="#">▶️ Regarder le tuto</a>
+          </div>
+
+          <div class="bonus-card">
+            <div class="b-type"><span class="icon">📅</span>Checklist</div>
+            <h3>Checklist J+0 à J+30</h3>
+            <p>Checklist imprimable des 30 premières actions à mener pour se lancer : URSSAF, SAP, RC pro, premières clientes…</p>
+            <a href="#">📥 Télécharger (.pdf)</a>
+          </div>
+        </div>
+
+        <div class="final-cta">
+          <div class="inner">
+            <h3>Une question sur le guide ou les bonus ?</h3>
+            <p>Le contenu est régulièrement mis à jour. Si quelque chose n'est pas clair, ou si vous voulez approfondir un sujet précis, écrivez-nous.</p>
+            <a href="#" class="btn btn-mustard" style="background:var(--orange);color:#fff">Contacter l'équipe →</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="mybatch_v2.html" class="brand">
+          <div class="brand-mark"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(10 16 16)"><path d="M12 6 L13 6 L13 12 L14 12 L14 6 L15 6 L15 12 L16 12 L16 6 L17 6 L17 12 L18 12 L18 6 L19 6 L19 12 L19.5 12 L19.5 13.5 L17 16 L17 22 L14 22 L14 16 L11.5 13.5 L11.5 12 L12 12 Z" fill="#fff" stroke="none"/><path d="M14 22 L17 22 L17 25 Q17 27 15.5 27 Q14 27 14 25 Z" fill="#E8843D" stroke="none"/><circle cx="22" cy="9" r="1.4" fill="#E8843D" stroke="none"/></g></svg></div>
+          <div class="brand-name">my batch<span class="dot">.</span></div>
+        </a>
+        <p>L'app pensée pour les batchcookeuses indépendantes.</p>
+      </div>
+      <div class="foot-col"><h4>Produit</h4><ul><li><a href="mybatch_v2.html#features">L'app</a></li><li><a href="mybatch_v2.html#tarifs">Tarifs</a></li><li><a href="#">Mon compte</a></li></ul></div>
+      <div class="foot-col"><h4>Ressources</h4><ul><li><a href="mybatch_guide_complet.html">Le guide</a></li><li><a href="#">FAQ</a></li></ul></div>
+      <div class="foot-col"><h4>my batch</h4><ul><li><a href="mybatch_histoire.html">L'histoire</a></li><li><a href="#">Contact</a></li><li><a href="#">CGU</a></li></ul></div>
+    </div>
+    <div class="foot-bot">
+      <div class="copy">© 2026 my batch — Tous droits réservés</div>
+      <div class="made">Pensé et fait en France.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
