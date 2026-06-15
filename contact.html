@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact · my batch</title>
+<meta name="description" content="Contactez l'équipe my batch — l'app des batchcookeuses indépendantes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.contact-hero{padding:80px 0 30px;background:linear-gradient(180deg,var(--green-pale) 0%,var(--bg) 100%);border-bottom:1px solid var(--green-soft);position:relative;overflow:hidden}
+.contact-hero::before{content:"";position:absolute;top:-80px;right:-60px;width:280px;height:280px;background:var(--orange-pale);border-radius:50%;opacity:.5;z-index:0}
+.contact-hero .wrap{position:relative;z-index:1}
+.contact-hero .eyebrow{font-size:12px;color:var(--orange-2);font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;display:block}
+.contact-hero h1{font-weight:800;font-size:54px;line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-bottom:14px}
+.contact-hero h1 .accent{color:var(--orange)}
+.contact-hero .lead{font-size:18px;color:var(--tx-2);line-height:1.55;max-width:600px}
+
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;padding:60px 0 100px}
+.contact-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:36px;box-shadow:var(--shadow)}
+.contact-card h2{font-size:22px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.01em}
+.contact-card .sub{font-size:14px;color:var(--muted);margin-bottom:24px}
+
+.field{margin-bottom:18px}
+.field label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-bottom:8px}
+.field input,.field textarea,.field select{width:100%;padding:14px 16px;border:1.5px solid var(--line-2);border-radius:12px;font-size:14.5px;color:var(--ink);background:#fff;outline:none;font-family:inherit;transition:border-color .15s}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--green)}
+.field textarea{resize:vertical;min-height:120px;line-height:1.5}
+.field .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field .hint{font-size:12px;color:var(--muted);margin-top:6px}
+.submit-row{display:flex;align-items:center;gap:14px;margin-top:24px;flex-wrap:wrap}
+.submit-row .small{font-size:12px;color:var(--muted);flex:1;min-width:200px}
+.submit-row .small a{color:var(--green);text-decoration:underline}
+
+.side-info{display:flex;flex-direction:column;gap:18px}
+.info-box{background:var(--bg-2);border-radius:var(--r-lg);padding:24px;border:1px solid var(--line)}
+.info-box h3{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em}
+.info-box p{font-size:14px;color:var(--tx-2);line-height:1.55;margin-bottom:8px}
+.info-box a{color:var(--green);text-decoration:underline;font-weight:600}
+.info-box.green{background:var(--green-pale);border-color:var(--green-soft)}
+.info-box.orange{background:var(--orange-pale);border-color:var(--orange-soft)}
+
+@media(max-width:1080px){.contact-grid{grid-template-columns:1fr;gap:36px}.contact-hero h1{font-size:38px}}
+@media(max-width:680px){.field .row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="nav-row">
+      <a href="index.html" class="brand">
+        <div class="brand-mark"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(10 16 16)"><path d="M12 6 L13 6 L13 12 L14 12 L14 6 L15 6 L15 12 L16 12 L16 6 L17 6 L17 12 L18 12 L18 6 L19 6 L19 12 L19.5 12 L19.5 13.5 L17 16 L17 22 L14 22 L14 16 L11.5 13.5 L11.5 12 L12 12 Z" fill="#fff" stroke="none"/><path d="M14 22 L17 22 L17 25 Q17 27 15.5 27 Q14 27 14 25 Z" fill="#E8843D" stroke="none"/><circle cx="22" cy="9" r="1.4" fill="#E8843D" stroke="none"/></g></svg></div>
+        <div class="brand-name">my batch<span class="dot">.</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">L'app</a></li>
+        <li><a href="guide.html">Le guide</a></li>
+        <li><a href="index.html#tarifs">Tarifs</a></li>
+        <li><a href="histoire.html">L'histoire</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://app.mybatch.cooking" class="btn btn-ghost">Se connecter</a>
+        <a href="https://app.mybatch.cooking" class="btn btn-orange">Essai gratuit 7j</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="contact-hero">
+  <div class="wrap">
+    <span class="eyebrow">On vous écoute</span>
+    <h1>Une question ? <span class="accent">Une suggestion ?</span></h1>
+    <p class="lead">L'équipe my batch lit chaque message. On vous répond généralement sous 48 heures ouvrées.</p>
+  </div>
+</section>
+
+<section class="contact-grid wrap">
+
+  <div class="contact-card">
+    <h2>Écrivez-nous</h2>
+    <p class="sub">Tous les champs marqués d'un astérisque (*) sont obligatoires.</p>
+
+    <!-- Netlify Form : detected via data-netlify="true". Pour activer cote Netlify : aucun script necessaire. -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/merci">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none"><label>Ne remplissez pas ceci : <input name="bot-field"></label></p>
+
+      <div class="field">
+        <div class="row">
+          <div>
+            <label for="nom">Prénom *</label>
+            <input type="text" id="nom" name="nom" required autocomplete="given-name" placeholder="Marie">
+          </div>
+          <div>
+            <label for="famille">Nom (optionnel)</label>
+            <input type="text" id="famille" name="famille" autocomplete="family-name" placeholder="Dupont">
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required autocomplete="email" placeholder="marie@email.com">
+        <div class="hint">Pour qu'on puisse vous répondre.</div>
+      </div>
+
+      <div class="field">
+        <label for="sujet">Sujet *</label>
+        <select id="sujet" name="sujet" required>
+          <option value="">— Choisissez —</option>
+          <option value="question-app">Question sur l'app</option>
+          <option value="question-tarifs">Question sur les tarifs / abonnement</option>
+          <option value="question-guide">Question sur le guide</option>
+          <option value="bug">Signaler un bug</option>
+          <option value="suggestion">Suggestion / amélioration</option>
+          <option value="presse">Demande presse / partenariat</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">Votre message *</label>
+        <textarea id="message" name="message" required placeholder="Décrivez votre demande..."></textarea>
+      </div>
+
+      <div class="field">
+        <label style="display:flex;gap:10px;align-items:flex-start;text-transform:none;letter-spacing:0;font-size:13.5px;color:var(--tx-2);font-weight:400;line-height:1.5;cursor:pointer">
+          <input type="checkbox" name="rgpd" required style="width:auto;margin-top:3px">
+          <span>J'accepte que mes données soient traitées pour le suivi de ma demande. Pour en savoir plus, voir notre <a href="confidentialite.html" style="color:var(--green);text-decoration:underline">politique de confidentialité</a>. *</span>
+        </label>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" class="btn btn-orange btn-lg" style="padding:14px 32px">Envoyer mon message →</button>
+        <div class="small">Réponse sous 48h ouvrées</div>
+      </div>
+    </form>
+  </div>
+
+  <div class="side-info">
+    <div class="info-box green">
+      <h3>📧 Email direct</h3>
+      <p>Si vous préférez l'email classique :</p>
+      <p><a href="mailto:contact@mybatch.cooking">contact@mybatch.cooking</a></p>
+    </div>
+
+    <div class="info-box">
+      <h3>❓ Avant d'écrire</h3>
+      <p>Beaucoup de questions ont déjà leur réponse dans la <a href="index.html#faq">FAQ de la home</a> ou dans le <a href="guide.html">guide complet</a>. Jetez un œil !</p>
+    </div>
+
+    <div class="info-box orange">
+      <h3>🔐 Vie privée</h3>
+      <p>Vos coordonnées sont utilisées <strong>uniquement</strong> pour vous répondre. Aucune newsletter, aucun spam, jamais cédées à des tiers.</p>
+    </div>
+
+    <div class="info-box">
+      <h3>🕒 Disponibilité</h3>
+      <p>L'équipe répond du lundi au vendredi, 9h-18h (heure de Paris).</p>
+      <p>Hors créneau, on vous lit dès le retour de bureau.</p>
+    </div>
+  </div>
+
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <div class="brand-mark"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(10 16 16)"><path d="M12 6 L13 6 L13 12 L14 12 L14 6 L15 6 L15 12 L16 12 L16 6 L17 6 L17 12 L18 12 L18 6 L19 6 L19 12 L19.5 12 L19.5 13.5 L17 16 L17 22 L14 22 L14 16 L11.5 13.5 L11.5 12 L12 12 Z" fill="#fff" stroke="none"/><path d="M14 22 L17 22 L17 25 Q17 27 15.5 27 Q14 27 14 25 Z" fill="#E8843D" stroke="none"/><circle cx="22" cy="9" r="1.4" fill="#E8843D" stroke="none"/></g></svg></div>
+          <div class="brand-name">my batch<span class="dot">.</span></div>
+        </a>
+        <p>L'app pensée pour les batchcookeuses indépendantes.</p>
+      </div>
+      <div class="foot-col"><h4>Produit</h4><ul><li><a href="index.html#features">L'app</a></li><li><a href="index.html#tarifs">Tarifs</a></li><li><a href="https://app.mybatch.cooking">Se connecter</a></li></ul></div>
+      <div class="foot-col"><h4>Ressources</h4><ul><li><a href="guide.html">Le guide</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="foot-col"><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="cgu.html">CGU / CGV</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="foot-bot">
+      <div class="copy">© 2026 my batch — Tous droits réservés</div>
+      <div class="made">Pensé et fait en France.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

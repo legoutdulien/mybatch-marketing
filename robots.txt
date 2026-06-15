@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /merci
+Disallow: /mentions-legales
+Disallow: /cgu
+Disallow: /confidentialite
+
+Sitemap: https://mybatch.cooking/sitemap.xml
