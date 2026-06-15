@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64">
+  <text x="0" y="44" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="44" letter-spacing="-1.5" fill="#1A1A1A">my batch</text>
+  <circle cx="232" cy="44" r="5" fill="#E8843D"/>
+  <g transform="translate(252 18)">
+    <path d="M6 16 Q6 8 10 8 Q14 8 14 14 Q14 20 10 20 Q6 20 6 26" stroke="#E8843D" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.6"/>
+  </g>
+</svg>

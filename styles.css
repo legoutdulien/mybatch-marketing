@@ -86,17 +86,27 @@ header.nav{
   display:flex;align-items:center;justify-content:space-between;
   padding:18px 0;gap:24px;
 }
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand-mark{
-  width:40px;height:40px;border-radius:50%;background:var(--green);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-}
-.brand-mark svg{width:22px;height:22px}
+.brand{display:inline-flex;align-items:baseline;gap:0;text-decoration:none}
+.brand-mark{display:none}
 .brand-name{
-  font-size:22px;font-weight:700;color:var(--ink);
-  letter-spacing:-.02em;line-height:1;
+  font-size:24px;font-weight:800;color:var(--ink);
+  letter-spacing:-.035em;line-height:1;
+  font-family:'Inter',system-ui,sans-serif;
+  display:inline-flex;align-items:baseline;
 }
-.brand-name .dot{color:var(--orange)}
+.brand-name .dot{
+  display:inline-block;
+  width:.3em;height:.3em;
+  border-radius:50%;
+  background:var(--orange);
+  margin-left:.08em;
+  vertical-align:baseline;
+  text-indent:200%;
+  white-space:nowrap;
+  overflow:hidden;
+  flex-shrink:0;
+  box-shadow:0 1px 0 rgba(232,132,61,.3);
+}
 .nav-links{display:flex;gap:30px;list-style:none}
 .nav-links a{
   font-size:14px;color:var(--tx);font-weight:500;
