@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Merci pour votre achat · my batch</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.merci-wrap{min-height:calc(100vh - 80px);padding:60px 24px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.merci-wrap::before{content:"";position:absolute;top:-180px;left:-120px;width:480px;height:480px;background:radial-gradient(circle, var(--orange-pale) 0%, transparent 70%);border-radius:50%;z-index:0}
+.merci-wrap::after{content:"";position:absolute;bottom:-200px;right:-150px;width:520px;height:520px;background:radial-gradient(circle, var(--green-pale) 0%, transparent 70%);border-radius:50%;z-index:0}
+.merci-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:48px 44px;max-width:620px;text-align:center;position:relative;z-index:1;box-shadow:0 20px 60px rgba(0,0,0,.06)}
+.merci-card .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:var(--orange-pale);color:var(--orange-2);border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px}
+.merci-card h1{font-size:42px;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:16px}
+.merci-card h1 .accent{color:var(--orange)}
+.merci-card .lead{font-size:16.5px;color:var(--tx-2);line-height:1.6;margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto}
+.merci-card .lead strong{color:var(--ink);font-weight:600}
+.merci-card .actions{display:flex;gap:12px;justify-content:center;margin-bottom:24px;flex-wrap:wrap}
+.merci-card .btn{padding:14px 28px;border-radius:12px;font-size:15px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.merci-card .btn-primary{background:var(--ink);color:#fff}
+.merci-card .btn-primary:hover{background:#000}
+.merci-card .btn-ghost{background:transparent;color:var(--tx);border:1.5px solid var(--line-2)}
+.merci-card .btn-ghost:hover{border-color:var(--ink);color:var(--ink)}
+.merci-card .small{font-size:12.5px;color:var(--muted);padding-top:20px;border-top:1px solid var(--line);margin-top:20px;line-height:1.5}
+.merci-card .small strong{color:var(--ink)}
+@media(max-width:560px){.merci-card{padding:36px 28px}.merci-card h1{font-size:32px}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="nav-row">
+      <a href="index.html" class="brand">
+        <div class="brand-name">my batch<span class="dot">.</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">L'app</a></li>
+        <li><a href="guide.html">Le guide</a></li>
+        <li><a href="index.html#tarifs">Tarifs</a></li>
+        <li><a href="histoire.html">L'histoire</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://app.mybatch.cooking" class="btn btn-ghost">Se connecter</a>
+        <a href="https://app.mybatch.cooking/signup.html" class="btn btn-orange">Essai gratuit 7j</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="merci-wrap">
+  <div class="merci-card">
+    <span class="pill">✓ Paiement reçu</span>
+    <h1>Merci pour votre achat, <span class="accent">votre guide est prêt !</span></h1>
+    <p class="lead">Votre <strong>facture</strong> arrive par email dans quelques minutes. Cliquez ci-dessous pour accéder à l'intégralité du guide. Ajoutez la page à vos favoris : c'est votre accès permanent.</p>
+    <div class="actions">
+      <a href="guide-complet.html" class="btn btn-primary">📖 Lire le guide complet →</a>
+      <a href="index.html" class="btn btn-ghost">Découvrir l'app</a>
+    </div>
+    <div class="small">
+      <strong>Pas reçu votre email ?</strong><br>
+      Vérifiez vos spams. Sinon écrivez-nous à contact@mybatch.cooking et on vous renvoie tout.
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

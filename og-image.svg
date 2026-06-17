@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FAF6EE"/>
+
+  <!-- Decorative blobs -->
+  <circle cx="100" cy="100" r="280" fill="#E8843D" opacity="0.10"/>
+  <circle cx="1100" cy="550" r="320" fill="#3D6B4F" opacity="0.12"/>
+  <circle cx="950" cy="120" r="120" fill="#E8843D" opacity="0.08"/>
+
+  <!-- Eyebrow pill -->
+  <g transform="translate(80, 130)">
+    <rect x="0" y="0" width="240" height="44" rx="22" fill="#FFFFFF" stroke="#F5C28E" stroke-width="1.5"/>
+    <circle cx="22" cy="22" r="5" fill="#E8843D"/>
+    <text x="40" y="29" font-family="Inter, sans-serif" font-weight="700" font-size="13" letter-spacing="1.5" fill="#D26A1F">L'APP DES BATCHCOOKEUSES</text>
+  </g>
+
+  <!-- Logo (huge) -->
+  <g transform="translate(80, 230)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-weight="800" font-size="180" letter-spacing="-8" fill="#1A1A1A">my batch</text>
+    <circle cx="930" cy="-22" r="30" fill="#E8843D"/>
+  </g>
+
+  <!-- Tagline -->
+  <g transform="translate(80, 310)">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-weight="500" font-size="42" fill="#374151">Gérez vos clientes, vos recettes,</text>
+    <text x="0" y="55" font-family="Inter, sans-serif" font-weight="500" font-size="42" fill="#374151">votre planning. <tspan font-weight="700" fill="#E8843D">Sans prise de tête.</tspan></text>
+  </g>
+
+  <!-- Features pill list -->
+  <g transform="translate(80, 470)" font-family="Inter, sans-serif" font-weight="600" font-size="20" fill="#1A1A1A">
+    <g transform="translate(0,0)">
+      <rect x="0" y="0" width="220" height="56" rx="28" fill="#FFFFFF" stroke="#E5E0D5" stroke-width="1.5"/>
+      <text x="32" y="35">✓ Essai 7 jours</text>
+    </g>
+    <g transform="translate(240,0)">
+      <rect x="0" y="0" width="260" height="56" rx="28" fill="#FFFFFF" stroke="#E5E0D5" stroke-width="1.5"/>
+      <text x="32" y="35">✓ 79 €/mois</text>
+    </g>
+    <g transform="translate(520,0)">
+      <rect x="0" y="0" width="240" height="56" rx="28" fill="#FFFFFF" stroke="#E5E0D5" stroke-width="1.5"/>
+      <text x="32" y="35">✓ Sans engagement</text>
+    </g>
+  </g>
+
+  <!-- URL bottom right -->
+  <g transform="translate(1080, 590)" text-anchor="end">
+    <text x="0" y="0" font-family="Inter, sans-serif" font-weight="600" font-size="20" fill="#1A1A1A">mybatch.cooking</text>
+  </g>
+</svg>

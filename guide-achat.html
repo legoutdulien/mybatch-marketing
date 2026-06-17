@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acheter le guide · my batch</title>
+<meta name="description" content="Achetez le guide complet « Se lancer comme batchcookeuse » : 14 chapitres pour démarrer votre activité en France. Achat unique 149 €.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.buy-wrap{padding:60px 0 100px}
+.buy-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+.buy-summary{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:32px;box-shadow:var(--shadow);position:sticky;top:96px}
+.buy-summary .pill{display:inline-block;padding:6px 14px;background:var(--orange-pale);color:var(--orange-2);border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+.buy-summary h2{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px;line-height:1.15}
+.buy-summary .sub{font-size:14px;color:var(--tx-2);margin-bottom:24px;line-height:1.55}
+.buy-summary .total-row{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:18px}
+.buy-summary .total-row .lbl{font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.buy-summary .total-row .val{font-size:34px;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.buy-summary .total-row .val small{font-size:14px;color:var(--tx-2);font-weight:500;margin-left:6px}
+.buy-summary ul{list-style:none;padding:0;margin:0}
+.buy-summary ul li{padding-left:24px;position:relative;margin-bottom:10px;font-size:13.5px;color:var(--tx);line-height:1.5}
+.buy-summary ul li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-weight:700}
+.buy-summary ul li strong{color:var(--ink)}
+
+.buy-form{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:36px;box-shadow:var(--shadow)}
+.buy-form h2{font-size:22px;font-weight:700;letter-spacing:-.015em;margin-bottom:6px}
+.buy-form .sub{font-size:13px;color:var(--tx-2);margin-bottom:24px}
+.bf-field{margin-bottom:18px}
+.bf-field label{display:block;font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
+.bf-field input{width:100%;padding:13px 16px;border:1.5px solid var(--line-2);border-radius:10px;font-size:14.5px;color:var(--ink);background:#fff;outline:none;font-family:inherit;transition:border-color .15s}
+.bf-field input:focus{border-color:var(--orange)}
+.bf-field .hint{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.4}
+
+.cb{display:flex;align-items:flex-start;gap:10px;padding:14px;background:var(--bg);border-radius:10px;margin-top:14px;cursor:pointer}
+.cb input{width:18px;height:18px;margin-top:1px;flex-shrink:0;accent-color:var(--orange);cursor:pointer}
+.cb .txt{font-size:12.5px;color:var(--tx);line-height:1.5}
+.cb .txt strong{color:var(--ink);font-weight:600}
+.cb .txt a{color:var(--green);text-decoration:underline}
+
+.err{background:#fdecea;color:#c62828;padding:11px 14px;border-radius:10px;font-size:13px;margin-top:14px;display:none}
+
+.btn-buy{width:100%;padding:15px;background:var(--ink);color:#fff;border:none;border-radius:11px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;margin-top:22px;transition:background .15s}
+.btn-buy:hover:not(:disabled){background:#000}
+.btn-buy:disabled{opacity:.5;cursor:not-allowed}
+
+.below{font-size:12px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5}
+
+@media(max-width:880px){
+  .buy-grid{grid-template-columns:1fr;gap:24px}
+  .buy-summary{position:relative;top:0}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="nav-row">
+      <a href="index.html" class="brand">
+        <div class="brand-name">my batch<span class="dot">.</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">L'app</a></li>
+        <li><a href="guide.html">Le guide</a></li>
+        <li><a href="index.html#tarifs">Tarifs</a></li>
+        <li><a href="histoire.html">L'histoire</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://app.mybatch.cooking" class="btn btn-ghost">Se connecter</a>
+        <a href="https://app.mybatch.cooking/signup.html" class="btn btn-orange">Essai gratuit 7j</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="buy-wrap wrap">
+  <div class="buy-grid">
+
+    <div class="buy-summary">
+      <span class="pill">Achat unique</span>
+      <h2>Guide complet « Se lancer comme batchcookeuse »</h2>
+      <p class="sub">14 chapitres, 60 pages, conçu et écrit par une batchcookeuse en activité.</p>
+
+      <div class="total-row">
+        <span class="lbl">Total TTC</span>
+        <span class="val">149 €<small>une fois</small></span>
+      </div>
+
+      <ul>
+        <li><strong>Accès illimité à vie</strong> au contenu</li>
+        <li>14 chapitres détaillés (URSSAF, tarifs, premières clientes, etc.)</li>
+        <li>Modèles téléchargeables (contrats, scripts, fiches)</li>
+        <li>Mises à jour gratuites</li>
+        <li>Paiement 100% sécurisé via Stripe</li>
+      </ul>
+    </div>
+
+    <div class="buy-form">
+      <h2>Vos coordonnées</h2>
+      <p class="sub">On a besoin de votre email pour vous envoyer la facture et vous donner accès au guide.</p>
+
+      <div class="bf-field">
+        <label for="nom">Votre prénom et nom *</label>
+        <input type="text" id="nom" placeholder="Ex : Marie Dupont" autocomplete="name">
+      </div>
+
+      <div class="bf-field">
+        <label for="email">Votre email *</label>
+        <input type="email" id="email" autocomplete="email" placeholder="vous@email.com">
+        <div class="hint">L'accès au guide arrive sur cette adresse.</div>
+      </div>
+
+      <label class="cb">
+        <input type="checkbox" id="cgu" required>
+        <span class="txt">J'accepte les <a href="cgu.html" target="_blank">CGU/CGV</a> et la <a href="confidentialite.html" target="_blank">politique de confidentialité</a> de my batch. *</span>
+      </label>
+
+      <label class="cb">
+        <input type="checkbox" id="renonce" required>
+        <span class="txt">Je souhaite accéder <strong>immédiatement</strong> au guide complet après paiement, et je renonce expressément à mon droit de rétractation sur ce contenu numérique (article L221-28-13° du Code de la consommation). *</span>
+      </label>
+
+      <div class="err" id="errBox"></div>
+
+      <button class="btn-buy" id="btnBuy">Payer 149 € →</button>
+      <div class="below">Vous serez redirigée vers Stripe pour saisir votre carte. Paiement sécurisé, factures émises par Structify (SIREN 981 646 136).</div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <div class="brand-name">my batch<span class="dot">.</span></div>
+        </a>
+        <p>L'app pensée pour les batchcookeuses indépendantes.</p>
+      </div>
+      <div class="foot-col"><h4>Produit</h4><ul><li><a href="index.html#features">L'app</a></li><li><a href="index.html#tarifs">Tarifs</a></li><li><a href="https://app.mybatch.cooking/signup.html">Essai gratuit</a></li><li><a href="https://app.mybatch.cooking">Se connecter</a></li></ul></div>
+      <div class="foot-col"><h4>Ressources</h4><ul><li><a href="guide.html">Le guide</a></li><li><a href="histoire.html">L'histoire</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="foot-col"><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="cgu.html">CGU / CGV</a></li><li><a href="confidentialite.html">Confidentialité</a></li></ul></div>
+    </div>
+    <div class="foot-bot">
+      <div class="copy">© 2026 my batch — Tous droits réservés</div>
+      <div class="made">Pensé et fait en France.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+
+function showErr(msg) { const e = $('errBox'); e.textContent = msg; e.style.display = 'block'; }
+function hideErr() { $('errBox').style.display = 'none'; }
+
+$('btnBuy').addEventListener('click', async () => {
+  hideErr();
+  const data = {
+    nom: $('nom').value.trim(),
+    email: $('email').value.trim(),
+    cgu: $('cgu').checked,
+    renonce_retractation: $('renonce').checked
+  };
+  if (!data.nom || data.nom.length < 2) return showErr('Votre nom est requis.');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return showErr('Email invalide.');
+  if (!data.cgu) return showErr('Vous devez accepter les CGU/CGV.');
+  if (!data.renonce_retractation) return showErr('Vous devez accepter la renonciation à la rétractation pour accéder immédiatement au guide.');
+
+  $('btnBuy').disabled = true;
+  $('btnBuy').textContent = 'Redirection vers Stripe…';
+
+  try {
+    const r = await fetch('https://app.mybatch.cooking/.netlify/functions/guide-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const out = await r.json();
+    if (!r.ok) throw new Error(out.error || 'Erreur serveur');
+    window.location.href = out.url;
+  } catch (e) {
+    showErr(e.message);
+    $('btnBuy').disabled = false;
+    $('btnBuy').textContent = 'Payer 149 € →';
+  }
+});
+</script>
+
+</body>
+</html>
