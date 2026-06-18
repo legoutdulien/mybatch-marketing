@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 660" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="greenG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3D6B4F"/><stop offset="1" stop-color="#2c5440"/>
+    </linearGradient>
+    <linearGradient id="ph1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9ec9ad"/><stop offset="1" stop-color="#3D6B4F"/></linearGradient>
+    <linearGradient id="ph2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a9d0e6"/><stop offset="1" stop-color="#4a8bb0"/></linearGradient>
+    <linearGradient id="ph3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d9a0"/><stop offset="1" stop-color="#d9a441"/></linearGradient>
+    <linearGradient id="ph4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7b5a8"/><stop offset="1" stop-color="#d9685a"/></linearGradient>
+  </defs>
+
+  <!-- ecran -->
+  <rect width="320" height="660" rx="30" fill="#FAF6EE"/>
+
+  <!-- status bar -->
+  <text x="22" y="29" font-size="12" font-weight="700" fill="#1A1A1A">9:41</text>
+  <g fill="#1A1A1A">
+    <circle cx="268" cy="24" r="1.7"/><circle cx="274" cy="24" r="1.7"/><circle cx="280" cy="24" r="1.7"/>
+    <rect x="286" y="19" width="13" height="9" rx="2.5" fill="none" stroke="#1A1A1A" stroke-width="1.3"/>
+    <rect x="288" y="21" width="8" height="5" rx="1" fill="#1A1A1A"/>
+  </g>
+
+  <!-- header -->
+  <text x="22" y="66" font-size="21" font-weight="800" fill="#1A1A1A" letter-spacing="-0.6">my batch</text>
+  <circle cx="107" cy="60" r="3.4" fill="#E8843D"/>
+  <circle cx="296" cy="58" r="15" fill="#fff" stroke="#EDE7DB" stroke-width="1.2"/>
+  <text x="296" y="63" font-size="14" font-weight="700" fill="#3D6B4F" text-anchor="middle">E</text>
+
+  <!-- carte salutation -->
+  <rect x="18" y="84" width="284" height="92" rx="18" fill="url(#greenG)"/>
+  <circle cx="278" cy="108" r="34" fill="#E8843D" opacity="0.18"/>
+  <circle cx="298" cy="150" r="18" fill="#E8843D" opacity="0.13"/>
+  <text x="34" y="120" font-size="18" font-weight="800" fill="#ffffff">Bonjour Estelle</text>
+  <text x="160" y="120" font-size="16">👋</text>
+  <text x="34" y="140" font-size="11.5" fill="#cfe0d6">jeudi 19 juin</text>
+  <rect x="34" y="150" width="150" height="16" rx="8" fill="#ffffff" opacity="0.15"/>
+  <text x="42" y="161.5" font-size="10.5" font-weight="600" fill="#eaf3ee">5 plats · 3 clientes cette semaine</text>
+
+  <!-- section recettes -->
+  <text x="22" y="206" font-size="13" font-weight="800" fill="#1A1A1A">Vos recettes</text>
+  <text x="300" y="206" font-size="11" font-weight="700" fill="#E8843D" text-anchor="end">Voir tout</text>
+
+  <!-- CARTES RECETTES (2 x 2) -->
+  <!-- helper layout : col gauche x=18, col droite x=166, larg=136 -->
+
+  <!-- carte 1 : Vege -->
+  <g>
+    <rect x="18" y="218" width="136" height="150" rx="16" fill="#ffffff"/>
+    <path d="M18 234a16 16 0 0 1 16-16h104a16 16 0 0 1 16 16v54H18z" fill="url(#ph1)"/>
+    <text x="86" y="268" font-size="30" text-anchor="middle">🥦</text>
+    <rect x="28" y="298" width="46" height="17" rx="8.5" fill="#e6f0ea"/>
+    <text x="51" y="310" font-size="9.5" font-weight="700" fill="#3D6B4F" text-anchor="middle">Végé</text>
+    <text x="28" y="334" font-size="12" font-weight="700" fill="#1A1A1A">Curry de</text>
+    <text x="28" y="350" font-size="12" font-weight="700" fill="#1A1A1A">légumes coco</text>
+  </g>
+
+  <!-- carte 2 : Poisson -->
+  <g>
+    <rect x="166" y="218" width="136" height="150" rx="16" fill="#ffffff"/>
+    <path d="M166 234a16 16 0 0 1 16-16h104a16 16 0 0 1 16 16v54H166z" fill="url(#ph2)"/>
+    <text x="234" y="268" font-size="30" text-anchor="middle">🐟</text>
+    <rect x="176" y="298" width="58" height="17" rx="8.5" fill="#e3eef4"/>
+    <text x="205" y="310" font-size="9.5" font-weight="700" fill="#3a6f8c" text-anchor="middle">Poisson</text>
+    <text x="176" y="334" font-size="12" font-weight="700" fill="#1A1A1A">Saumon miel</text>
+    <text x="176" y="350" font-size="12" font-weight="700" fill="#1A1A1A">&amp; moutarde</text>
+  </g>
+
+  <!-- carte 3 : Poulet -->
+  <g>
+    <rect x="18" y="380" width="136" height="150" rx="16" fill="#ffffff"/>
+    <path d="M18 396a16 16 0 0 1 16-16h104a16 16 0 0 1 16 16v54H18z" fill="url(#ph3)"/>
+    <text x="86" y="430" font-size="30" text-anchor="middle">🍗</text>
+    <rect x="28" y="460" width="52" height="17" rx="8.5" fill="#f6ead2"/>
+    <text x="54" y="472" font-size="9.5" font-weight="700" fill="#b07d1e" text-anchor="middle">Poulet</text>
+    <text x="28" y="496" font-size="12" font-weight="700" fill="#1A1A1A">Poulet rôti</text>
+    <text x="28" y="512" font-size="12" font-weight="700" fill="#1A1A1A">citron-thym</text>
+  </g>
+
+  <!-- carte 4 : Pates -->
+  <g>
+    <rect x="166" y="380" width="136" height="150" rx="16" fill="#ffffff"/>
+    <path d="M166 396a16 16 0 0 1 16-16h104a16 16 0 0 1 16 16v54H166z" fill="url(#ph4)"/>
+    <text x="234" y="430" font-size="30" text-anchor="middle">🍝</text>
+    <rect x="176" y="460" width="48" height="17" rx="8.5" fill="#f7e0db"/>
+    <text x="200" y="472" font-size="9.5" font-weight="700" fill="#c0584a" text-anchor="middle">Pâtes</text>
+    <text x="176" y="496" font-size="12" font-weight="700" fill="#1A1A1A">Pâtes pesto</text>
+    <text x="176" y="512" font-size="12" font-weight="700" fill="#1A1A1A">de roquette</text>
+  </g>
+
+  <!-- bandeau prochaine livraison -->
+  <rect x="18" y="544" width="284" height="34" rx="12" fill="#fff5ec"/>
+  <circle cx="38" cy="561" r="9" fill="#E8843D"/>
+  <text x="38" y="565" font-size="10" text-anchor="middle">📅</text>
+  <text x="56" y="558" font-size="10.5" font-weight="700" fill="#1A1A1A">Prochaine intervention</text>
+  <text x="56" y="571" font-size="10" fill="#8a6a4a">Murielle · jeudi 13h30 — 2 portions</text>
+
+  <!-- barre de navigation -->
+  <rect x="0" y="600" width="320" height="60" fill="#ffffff"/>
+  <rect x="0" y="600" width="320" height="1.2" fill="#EDE7DB"/>
+  <!-- Planning (actif) -->
+  <rect x="20" y="612" width="18" height="18" rx="4" fill="none" stroke="#E8843D" stroke-width="2"/>
+  <line x1="20" y1="619" x2="38" y2="619" stroke="#E8843D" stroke-width="2"/>
+  <text x="29" y="648" font-size="8.5" font-weight="700" fill="#E8843D" text-anchor="middle">Planning</text>
+  <!-- Recettes -->
+  <circle cx="93" cy="621" r="9" fill="none" stroke="#b9b2a6" stroke-width="2"/>
+  <text x="93" y="648" font-size="8.5" font-weight="600" fill="#9b9488" text-anchor="middle">Recettes</text>
+  <!-- Courses -->
+  <path d="M150 614h14l-2 11h-10z" fill="none" stroke="#b9b2a6" stroke-width="2" stroke-linejoin="round"/>
+  <text x="157" y="648" font-size="8.5" font-weight="600" fill="#9b9488" text-anchor="middle">Courses</text>
+  <!-- Clientes -->
+  <circle cx="221" cy="617" r="5" fill="none" stroke="#b9b2a6" stroke-width="2"/>
+  <path d="M213 630a8 7 0 0 1 16 0z" fill="none" stroke="#b9b2a6" stroke-width="2"/>
+  <text x="221" y="648" font-size="8.5" font-weight="600" fill="#9b9488" text-anchor="middle">Clientes</text>
+  <!-- Plus -->
+  <line x1="291" y1="613" x2="291" y2="629" stroke="#b9b2a6" stroke-width="2"/>
+  <line x1="283" y1="621" x2="299" y2="621" stroke="#b9b2a6" stroke-width="2"/>
+  <text x="291" y="648" font-size="8.5" font-weight="600" fill="#9b9488" text-anchor="middle">Plus</text>
+</svg>
